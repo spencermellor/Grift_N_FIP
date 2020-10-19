@@ -1,0 +1,8 @@
+{
+    "image1": "images/",
+    "image2": "images/",
+    "title": "Fanci Chat",
+    "subtitle": "Website - Single Page Application",
+    "desc": "Fanci chat is a single page application created with react, node.js,  express, and socket.io.  This project was created as a passion project to grow my interest in web applications and single page applications.  ",
+    "link": "www.fanci.ca"
+}
