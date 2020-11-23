@@ -5,142 +5,173 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>NateGrift</title>
         <link
-            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;900&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="css/master.css" />
     </head>
     <body>
         <main>
-            <!-- Header -->
-            <header>
-                <!-- Icon -->
-                <div>
-                    <img src="images/" alt="logo" />
-                </div>
-
-                <!-- Nav -->
-                <div>
-                    <ul>
-                        <li>
-                            <a href="">Github</a>
-                        </li>
-                        <li>
-                            <a href="">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="">Website</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Nav -->
-                <div>
-                    <div>Nav Link</div>
-                </div>
-            </header>
-            <!-- Hero Image and Intro -->
             <section>
-                <!-- Info -->
-                <div>
-                    <h1 class="hidden">NateGrift</h1>
-                    <h2>Hi, I'm Nate</h2>
-                    <p>I'm a Graphic Designer & Frontend Developer</p>
-                    <a href="contact.html">Contact</a>
-                </div>
-
-                <!-- Hero Image -->
-                <div>
-                    <img src="images/" alt="hero image" />
+                <!-- Header -->
+                <header>
+                    <!-- Icon -->
+                    <div>
+                        <img src="images/logo.svg" alt="logo" />
+                    </div>
+    
+                    <!-- Nav -->
+                    <div>
+                        <ul class="header-social_navigation">
+                            <li>
+                                <a href=""><img src="images/github-square-brands.svg" alt="github" /></a>
+                            </li>
+                            <li>
+                                <a href=""><img src="images/globe-americas-solid.svg" alt="website" /></a>
+                            </li>
+                            <li>
+                                <a href=""><img src="images/instagram-brands.svg" alt="instagram" /></a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Nav -->
+                    <div>
+                        <img id="navtogglebutton" src="images/bars-light.svg" alt="bars-light" />
+                    </div>
+                </header>
+                <!-- Hero Image and Intro -->
+                <div class="home-herosection">
+                    <!-- Info -->
+                    <div>
+                        <h1 class="hidden">NateGrift</h1>
+                        <h2>Hi, I'm Nate</h2>
+                        <p>I'm a Graphic Designer & Frontend Developer</p>
+                        <a class="button-primary" href="contact.html">Contact</a>
+                    </div>
+    
+                    <!-- Hero Image -->
+                    <div>
+                        <img src="images/homepage-hero.png" alt="hero image" />
+                    </div>
                 </div>
             </section>
+            <nav class="navigationMenu">
+                <img src="images/logo.svg" alt="logo" />
+                <img id="x-button" src="images/x-button.svg" alt="x-button" />
+                <ul class="header-social_navigation">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
 
             <!-- About me -->
-            <section>
+            <section class="section-fullheight">
                 <!-- Image of Me -->
-                <div></div>
+                <div class="section-column-1-of-2">
+                    <div class="section-image">
+                        <img src="images/nategrift-profilepic-BW.png" alt="Profile Picture of Nate Grift">
+                    </div>
+                </div>
 
                 <!-- About me -->
-                <div>
-                    <h2>About me</h2>
-                    <p>
-                        Hey! I am a web designer and developer. I am a student
-                        at Fanshawe College taking Interactive Media Design. I
-                        absolutely love building websites and creating amazing
-                        visuals for people. Feel free to check out my Portfolio
-                        and contact me if you like what you see! Thanks for
-                        taking the time to check out my website.
-                    </p>
+                <div class="section-column-1-of-2">
+                    <div class="section-text">
+                        <h2>About me</h2>
+                        <p>
+                            Hey! I am a web designer and developer. I am a student
+                            at Fanshawe College taking Interactive Media Design. I
+                            absolutely love building websites and creating amazing
+                            visuals for people. Feel free to check out my Portfolio
+                            and contact me if you like what you see! Thanks for
+                            taking the time to check out my website.
+                        </p>
+                    </div>
                 </div>
             </section>
 
             <!-- Who I am -->
-            <section>
+            <section class="section-fullheight section-wrap-normal">
                 <!-- Attributes of me -->
-                <div>
-                    <ul>
-                        <li>
-                            <h4>Aspired Visual Artist</h4>
-                        </li>
-                        <li>
-                            <h4>Junior Frontend Developer</h4>
-                        </li>
-                        <li>
-                            <h4>Eager Fanshawe Student</h4>
-                        </li>
-                        <li>
-                            <h4>Aspiring Full Stack Developer</h4>
-                        </li>
-                    </ul>
-                    <a href="contact.html">Contact</a>
-                </div>
-
+                <div class="section-column-1-of-2">
+                    <div class="section-list">
+                        <ul>
+                            <li>
+                                <h4>Aspired Visual Artist</h4>
+                            </li>
+                            <li>
+                                <h4>Junior Frontend Developer</h4>
+                            </li>
+                            <li>
+                                <h4>Eager Fanshawe Student</h4>
+                            </li>
+                            <li>
+                                <h4>Aspiring Full Stack Developer</h4>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="button-primary margin-top-small">Contact</a>
+                    </div>
+                </div>  
                 <!-- Attributes Image -->
-                <div>
-                    <img src="images/" alt="attributes" />
+                <div class="section-column-1-of-2">
+                    <div class="section-svg">
+                        <img src="images/check-marks.svg" alt="attributes" />
+                    </div>
                 </div>
             </section>
 
             <!-- Portfolio Link -->
-            <section>
+            <section class="section-fullheight">
                 <!-- Portfolio Illustration -->
-                <div>
-                    <img src="images/" alt=" portfolio image" />
+                <div class="section-column-1-of-2">
+                    <div class="section-svg home-portfolio-svg">
+                        <img src="images/portfolio-image.svg" alt=" portfolio image" />
+                    </div>
                 </div>
-                <div>
-                    <h1>Check out my work</h1>
-                    <p>
-                        My portfolio is full of web development work and
-                        designs. Feel free to check it out
-                    </p>
-                    <a href="portfolio.html">Portfolio</a>
+                <div class="section-column-1-of-2">
+                    <div class="section-text">
+                        <h2>Check out my work</h2>
+                        <p>
+                            My portfolio is full of web development work and
+                            designs. Feel free to check it out
+                        </p>
+                        <a href="portfolio.html" class="button-primary margin-top-small">Portfolio</a>
+                    </div>
                 </div>
             </section>
             <footer>
                 <!-- Links & Logo -->
-                <div>
+                <div class="footer-nav">
                     <a href="contact.html">Contact</a>
-                    <a href="index.html">
-                        <img src="images/" alt="logo" />
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.svg" alt="logo" />
                         <h4>NATEGRIFT</h4>
                     </a>
                     <a href="portfolio.html">Portfolio</a>
                 </div>
                 <!-- Social Media Links -->
-                <div>
-                    <ul>
+                <div class="footer-social_container">
+                    <ul class="header-social_navigation">
                         <li>
-                            <a href="">Github</a>
+                            <a href=""><img src="images/github-square-brands.svg" alt="github" /></a>
                         </li>
                         <li>
-                            <a href="">Instagram</a>
+                            <a href=""><img src="images/globe-americas-solid.svg" alt="website" /></a>
                         </li>
                         <li>
-                            <a href="">Website</a>
+                            <a href=""><img src="images/instagram-brands.svg" alt="instagram" /></a>
                         </li>
                     </ul>
                 </div>
             </footer>
         </main>
+        <script src="js/nav.js"></script>
     </body>
 </html>
