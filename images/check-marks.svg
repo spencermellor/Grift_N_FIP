@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="311.837" height="435.647" viewBox="0 0 311.837 435.647">
+  <g id="check_marks" data-name="check marks" transform="translate(-1214.616 -2189.827)">
+    <g id="Rectangle_53" data-name="Rectangle 53" transform="translate(1322.287 2189.827)" fill="none" stroke="#89754d" stroke-width="2">
+      <rect width="204.166" height="204.166" stroke="none"/>
+      <rect x="1" y="1" width="202.166" height="202.166" fill="none"/>
+    </g>
+    <path id="check-light" d="M132.833,89.55l-88.7,88.7-31.36-31.36a3.8,3.8,0,0,0-5.376,0L3.81,150.478a3.8,3.8,0,0,0,0,5.376l37.632,37.632a3.8,3.8,0,0,0,5.376,0L141.793,98.51a3.8,3.8,0,0,0,0-5.376l-3.584-3.584A3.8,3.8,0,0,0,132.833,89.55Z" transform="matrix(1, -0.017, 0.017, 1, 1353.435, 2154.922)" fill="none" stroke="#eaeaea" stroke-width="2"/>
+    <g id="Rectangle_55" data-name="Rectangle 55" transform="translate(1423.256 2530.547)" fill="none" stroke="#89754d" stroke-width="2">
+      <rect width="94.927" height="94.927" stroke="none"/>
+      <rect x="1" y="1" width="92.927" height="92.927" fill="none"/>
+    </g>
+    <path id="check-light-2" data-name="check-light" d="M63.2,88.954,21.961,130.2,7.38,115.616a1.768,1.768,0,0,0-2.5,0l-1.666,1.666a1.768,1.768,0,0,0,0,2.5l17.5,17.5a1.768,1.768,0,0,0,2.5,0L67.37,93.12a1.768,1.768,0,0,0,0-2.5L65.7,88.954A1.767,1.767,0,0,0,63.2,88.954Z" transform="matrix(1, -0.017, 0.017, 1, 1435.471, 2467.032)" fill="none" stroke="#eaeaea" stroke-width="2"/>
+    <g id="Rectangle_56" data-name="Rectangle 56" transform="translate(1214.616 2372.832)" fill="none" stroke="#89754d" stroke-width="2">
+      <rect width="135.198" height="135.198" stroke="none"/>
+      <rect x="1" y="1" width="133.198" height="133.198" fill="none"/>
+    </g>
+    <rect id="Rectangle_54" data-name="Rectangle 54" width="135.198" height="135.198" transform="translate(1265.593 2323.54)" fill="none"/>
+    <path id="check-light-3" data-name="check-light" d="M88.873,89.174,30.133,147.913,9.367,127.147a2.517,2.517,0,0,0-3.56,0L3.434,129.52a2.518,2.518,0,0,0,0,3.56L28.353,158a2.517,2.517,0,0,0,3.56,0L94.806,95.107a2.517,2.517,0,0,0,0-3.56l-2.373-2.373A2.517,2.517,0,0,0,88.873,89.174Z" transform="matrix(1, -0.017, 0.017, 1, 1233.788, 2318.572)" fill="none" stroke="#eaeaea" stroke-width="2"/>
+  </g>
+</svg>

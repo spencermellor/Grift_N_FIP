@@ -11,35 +11,50 @@
         <link rel="stylesheet" href="css/master.css" />
     </head>
     <body>
+        <!-- Header -->
+        <header>
+            <!-- Icon -->
+            <div>
+                <img src="images/logo.svg" alt="logo" />
+            </div>
+
+            <!-- Nav -->
+            <div>
+                <ul class="header-social_navigation">
+                    <li>
+                        <a href=""><img src="images/github-square-brands.svg" alt="github" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/globe-americas-solid.svg" alt="website" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/instagram-brands.svg" alt="instagram" /></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Nav -->
+            <div>
+                <img id="navtogglebutton" src="images/bars-light.svg" alt="bars-light" />
+            </div>
+        </header>
+        <nav class="navigationMenu">
+            <img src="images/logo.svg" alt="logo" />
+            <img id="x-button" src="images/x-button.svg" alt="x-button" />
+            <ul class="header-social_navigation">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Hero Image & Title -->
         <main>
-            <!-- Header -->
-            <header>
-                <!-- Icon -->
-                <div>
-                    <img src="images/" alt="logo" />
-                </div>
-
-                <!-- Nav -->
-                <div>
-                    <ul>
-                        <li>
-                            <a href="">Github</a>
-                        </li>
-                        <li>
-                            <a href="">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="">Website</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Nav -->
-                <div>
-                    <div>Nav Link</div>
-                </div>
-            </header>
-            <!-- Hero Image & Title -->
             <section>
                 <!-- Title -->
                 <div>
@@ -49,7 +64,7 @@
                 </div>
                 <!-- Hero Image -->
                 <div>
-                    <img src="images/" alt="portfolio hero">
+                    <img src="images/" alt="portfolio hero" />
                 </div>
             </section>
             <!-- Portfolio -->
@@ -64,54 +79,71 @@
                 </nav>
                 <!-- Portfolio content -->
                 <div>
-                    <ul id="portfolio-content">
-                        <li>
-                            <!-- change to TEMPLATE once we can retrieve data from database.  Here during development to show example-->
-
-                            <!-- Images -->
-                            <div>
-                                <img src="images/" alt="image 1">
-                                <img src="images/" alt="image 2">
-                            </div>
-
-                            <!-- Info -->
-                            <div>
-                                <h3>Fanci Chat</h3>
-                                <p>Website - Single Page Application</p>
-                                <p>Fanci chat is a single page application created with react, node.js,  express, and socket.io.  This project was created as a passion project to grow my interest in web applications and single page applications.  </p>
-                                <a href="#">FANCI CHAT</a>
-                            </div>
-                        </li>
-                    </ul>
+                    <ul id="portfolio-content"></ul>
                 </div>
             </section>
-
-            <footer>
-                <!-- Links & Logo -->
-                <div>
-                    <a href="contact.html">Contact</a>
-                    <a href="index.html">
-                        <img src="images/" alt="logo" />
-                        <h4>NATEGRIFT</h4>
-                    </a>
-                    <a href="portfolio.html">Portfolio</a>
-                </div>
-                <!-- Social Media Links -->
-                <div>
-                    <ul>
-                        <li>
-                            <a href="">Github</a>
-                        </li>
-                        <li>
-                            <a href="">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="">Website</a>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
         </main>
-        <script src="js/main.js"></script>
+        <footer>
+            <!-- Links & Logo -->
+            <div class="footer-nav">
+                <a href="contact.html">Contact</a>
+                <a href="index.html" class="footer-logo">
+                    <img src="images/logo.svg" alt="logo" />
+                    <h4>NATEGRIFT</h4>
+                </a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+            <!-- Social Media Links -->
+            <div class="footer-social_container">
+                <ul class="header-social_navigation">
+                    <li>
+                        <a href=""
+                            ><img
+                                src="images/github-square-brands.svg"
+                                alt="github"
+                        /></a>
+                    </li>
+                    <li>
+                        <a href=""
+                            ><img
+                                src="images/globe-americas-solid.svg"
+                                alt="website"
+                        /></a>
+                    </li>
+                    <li>
+                        <a href=""
+                            ><img
+                                src="images/instagram-brands.svg"
+                                alt="instagram"
+                        /></a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+        <template id="portfolio-template">
+            <li>
+                <!-- Images -->
+                <div>
+                    <img src="images/" alt="image 1" />
+                    <img src="images/" alt="image 2" />
+                </div>
+
+                <!-- Info -->
+                <div>
+                    <h3>Fanci Chat</h3>
+                    <p>Website - Single Page Application</p>
+                    <p>
+                        Fanci chat is a single page application created with
+                        react, node.js, express, and socket.io. This project was
+                        created as a passion project to grow my interest in web
+                        applications and single page applications.
+                    </p>
+                    <a href="#">FANCI CHAT</a>
+                </div>
+            </li>
+        </template>
+        <script src="js/nav.js"></script>
+        <script type="module" src="js/portfolio.js"></script>
     </body>
 </html>
