@@ -5,6 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
     margin-left: 0px;
+    margin-top: 2rem;
 
     h1 {
         font-size: 5rem;
@@ -26,6 +27,8 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 7rem 0;
+    max-width: 100rem;
+    margin: 0 auto;
 
     @include backgroundGradient;
 
@@ -98,7 +101,7 @@
 @media (min-width: 1000px) {
     .portfolio-content {
         li {
-            margin-bottom: 5rem;
+            margin-bottom: 7rem;
         }
 
         &__images {
@@ -108,6 +111,7 @@
         &__text {
             width: 50%;
             margin: 0 0;
+            margin-top: 2rem;
 
             h3 {
                 font-size: 3.8rem;
@@ -120,13 +124,15 @@
             }
         }   
     }
+    
 }
 
 
-@media (min-width: 800px) { 
+@media (min-width: 840px) { 
     .portfolio-herosection {
         align-items: flex-start;
         margin-left: 15rem;
+        margin-top: 2rem;
     
         h1 {
             font-size: 7rem;

@@ -20,6 +20,6 @@
 
 @mixin backgroundGradient {
     background: rgb(41,41,41);
-    background: radial-gradient(ellipse, rgba(10,10,10,1) 0%, rgba(0,0,0,1) 60%); 
+    background: radial-gradient(ellipse, rgba(15,15,15,1) 0%, rgba(0,0,0,1) 60%); 
     background-size: auto, auto;
 }
