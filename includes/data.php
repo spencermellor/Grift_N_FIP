@@ -22,8 +22,8 @@ if (isset($_GET['id'])) {
     $result = $portfolio->getPieceByID($_GET['id']);
 } elseif (isset($_GET['category'])) {
     $result = $portfolio->getPiecesByCategory($_GET['category']);
-} elseif (isset($_GET['tag'])) {
-    $result = $portfolio->getPieceByTag($_GET['tag']);
+} elseif (isset($_GET['list'])) {
+    $result = $portfolio->getList($_GET['list']);
 } else {
     $result = $portfolio->getPieces();
 }

@@ -92,7 +92,7 @@
             <!-- Portfolio -->
             <section id="portfolio-section">
                 <nav class="portfolio-selector">
-                        <a v-for="link in listOfCategories" @click.prevent="changeSection(link.name)" :class="{ profileActive: link.active }">{{ link.displayName }}</a>
+                        <a v-for="link in listOfCategories" @click.prevent="changeSection(link.category)" :class="{ profileActive: link.active }">{{ link.display_name }}</a>
                 </nav>
                 <!-- Portfolio content -->
                 <div>

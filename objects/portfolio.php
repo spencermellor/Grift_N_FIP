@@ -26,7 +26,14 @@ class Portfolio {
         $query .= ' LEFT JOIN tbl_portfolio_categories link ON link.portfolio_id = p.portfolio_id';
         $query .= ' LEFT JOIN tbl_categories cat ON cat.category_id = link.category_id';
         $query .= ' WHERE cat.category LIKE "%'.$category.'%"';
-        $query .= ' GROUP BY p.portfolio_id';
+        
+        return $this->runQuery($query);
+
+    }
+
+    public function getList($list) {
+
+        $query = 'SELECT * FROM '.$list;
         
         return $this->runQuery($query);
 
@@ -41,19 +48,6 @@ class Portfolio {
         $query .= ' WHERE port.portfolio_id = '.$id;
         $query .= ' GROUP BY cat.category';
 
-        return $this->runQuery($query);
-
-    }
-
-    public function getPieceByTag($tag) {
-
-        $query = 'SELECT p.*, tag.tag_name ';
-        $query .= ' FROM tbl_portfolio_items p';
-        $query .= ' LEFT JOIN tbl_portfolio_tags link ON link.portfolio_id = p.portfolio_id';
-        $query .= ' LEFT JOIN tbl_tags tag ON tag.tag_id = link.tag_id';
-        $query .= ' WHERE tag.tag_name LIKE "%'.$tag.'%"';
-        $query .= ' GROUP BY p.portfolio_id';
-        
         return $this->runQuery($query);
 
     }

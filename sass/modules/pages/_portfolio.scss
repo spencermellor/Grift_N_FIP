@@ -1,20 +1,18 @@
 .portfolio-herosection {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
-
-    margin-left: 15rem;
+    margin-left: 0px;
 
     h1 {
-        font-size: 7rem;
+        font-size: 5rem;
         font-weight: 700;
         color: $color-white;
     }
     p {
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 500;
         color: $color-primary;
         margin-bottom: 1rem;
@@ -23,12 +21,11 @@
 
 .portfolio-selector {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    // margin: 7rem 0;
-    padding: 10rem 0;
+    padding: 7rem 0;
 
     @include backgroundGradient;
 
@@ -39,6 +36,7 @@
         transition: all 0.3s;
         cursor: pointer;
         padding: 1rem;
+        margin-bottom: 1.2rem;
         border-bottom: 1px solid transparent;
     }
 
@@ -80,7 +78,7 @@
             font-size: 3rem;
         }
         p:first-of-type {
-            font-size: 2rem;
+            font-size: 1.8rem;
             border-bottom: 1px solid $color-accent;
             padding-bottom: 1rem;
         }
@@ -123,3 +121,23 @@
         }   
     }
 }
+
+
+@media (min-width: 800px) { 
+    .portfolio-herosection {
+        align-items: flex-start;
+        margin-left: 15rem;
+    
+        h1 {
+            font-size: 7rem;
+        }
+        p {
+            font-size: 2rem;
+        }
+    }
+    .portfolio-selector {    
+        flex-direction: row;
+    }   
+}
+
+
