@@ -20,18 +20,9 @@ async function fetchData(sourceURL) {
     
     // we'll assume success and pass through a parsed JavaScript object from the JSON data we get
     let dataset = await resource.json();
-    console.log(dataset)
-    return resource;
 
-    return dataset[0];
+    return dataset;
     
 }
 
-async function postData(sourceURL) {
-    // use fetch or Axios to post to a database here
-
-    return "You are using the postData API endpoint";
-}
-
-
-export { fetchData, postData };
+export { fetchData };
