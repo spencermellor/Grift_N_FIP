@@ -7,43 +7,32 @@ import { fetchData } from "./modules/fetchData.js";
             data: {
                 activeCategory: 'featured',
                 portfolioItems: [],
-                listOfCategories: [{
-                    id: "1",
-                    name: "featured",
-                    displayName: "Best Work",
-                    active: true
-                }, {
-                    id: "2",
-                    name: "website",
-                    displayName: "Web Development",
-                    active: false
-                }, {
-                    id: "3",
-                    name: "3d",
-                    displayName: "3D & Motion Design",
-                    active: false
-                }, {
-                    id: "4",
-                    name: "design",
-                    displayName: "Graphic Design",
-                    active: false
-                },]
+                listOfCategories: []
             },
             mounted: function() {
-                fetchData("./includes/data.php").then(data => this.updatePortfolioList(data)).catch(err => { console.log(err);});
+                fetchData("./includes/data.php?category=featured").then(data => this.updatePortfolioList(data)).catch(err => { console.log(err);});
+                fetchData("./includes/data.php?list=tbl_categories").then(data => this.updateCategoriesList(data)).catch(err => { console.log(err);});
             },
             methods: {
                 updatePortfolioList(items) {
                     this.portfolioItems = items;
                 },
+                updateCategoriesList(items) {
+                    
+                    items.forEach((item) => {
+                        item.active = false;
+                    })
+                    items[0].active = true;
+                    this.listOfCategories = items;
+                },
                 changeSection(sectionId) {
-                    const itemIndex = this.listOfCategories.findIndex(item => item.name == sectionId);
+                    const itemIndex = this.listOfCategories.findIndex(item => item.category == sectionId);
                     const activeIndex = this.listOfCategories.findIndex(item => item.active == true)
                     this.listOfCategories[itemIndex].active = true;
                     this.listOfCategories[activeIndex].active = false;
 
                     console.log(sectionId)
-                   // fetchData(`./includes/data.php?catergory=${sectionId}`).then(data => this.updatePortfolioList(data)).catch(err => { console.log(err);});  
+                   fetchData(`./includes/data.php?category=${sectionId}`).then(data => this.updatePortfolioList(data)).catch(err => { console.log(err);});  
                 }
             }
         }).$mount('#portfolio-section')
