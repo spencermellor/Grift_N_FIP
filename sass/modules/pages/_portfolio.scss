@@ -1,0 +1,125 @@
+.portfolio-herosection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    margin-left: 15rem;
+
+    h1 {
+        font-size: 7rem;
+        font-weight: 700;
+        color: $color-white;
+    }
+    p {
+        font-size: 2rem;
+        font-weight: 500;
+        color: $color-primary;
+        margin-bottom: 1rem;
+    }
+}
+
+.portfolio-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    // margin: 7rem 0;
+    padding: 10rem 0;
+
+    @include backgroundGradient;
+
+    a {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $color-white;
+        transition: all 0.3s;
+        cursor: pointer;
+        padding: 1rem;
+        border-bottom: 1px solid transparent;
+    }
+
+    a:hover {
+        color: $color-primary;
+    }
+}
+
+
+.portfolio-content {
+    li {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 10rem;
+    }
+
+    &__images {
+        width: 100%;
+        max-width: 550px;
+        min-width: 300px;
+        margin: 0 5rem;
+        
+
+        img {
+            max-width: 100%;
+        }
+    }   
+    &__text {
+        width: 100%;
+        max-width: 750px;
+        min-width: 300px;
+        margin: 2.5rem 5rem;
+
+        h3 {
+            font-size: 3rem;
+        }
+        p:first-of-type {
+            font-size: 2rem;
+            border-bottom: 1px solid $color-accent;
+            padding-bottom: 1rem;
+        }
+        p:last-of-type {
+            font-size: 1.6rem;
+            padding: 1rem 0;
+            color: $color-primary;
+        }
+    }   
+}
+
+
+.profileActive {
+    border-bottom: 1px solid $color-accent !important;
+}
+
+@media (min-width: 1000px) {
+    .portfolio-content {
+        li {
+            margin-bottom: 5rem;
+        }
+
+        &__images {
+            width: 30%;
+            margin: 0 0;
+        }   
+        &__text {
+            width: 50%;
+            margin: 0 0;
+
+            h3 {
+                font-size: 3.8rem;
+            }
+            p:first-of-type {
+                font-size: 2.2rem;
+            }
+            p:last-of-type {
+                font-size: 1.6rem;
+            }
+        }   
+    }
+}

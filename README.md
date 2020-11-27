@@ -14,6 +14,32 @@ Purpose is to create a full live-hosted website to demonstate the ability to hos
 The file `PortfolioContent.json` within the `data/` folder is a template of what a portfolio item will look like once retrieved from a database.  
 *DO NOT USE THIS AS PORFOLIO DATA IN FINISHED PRODUCT*
 
+### API info
+
+ The api current endpoints are as follows: 
+
+**GET**  `includes/data.php` retreives list of all portfolio items
+
+
+**GET**  `includes/data.php?id=1` retreives portfolio item where its *id = 1* 
+*id can be replaced with any number that is valid*
+
+
+**GET**  `includes/data.php?category=website` retreives list of all portfolio items with the category of *website*.
+
+List of Available categories:
+- `website` *web development projects I made*
+- `3d` *3D and Motion design work*
+- `design` *graphic design work*
+
+
+**GET**  
+`includes/data.php?tags=featured` retreives list of all portfolio items with the tag of *featured*.
+
+List of Available tags:
+- `featured` *some of my best work*
+
+
 ### Authors
 
 - Developer - Nate Grift

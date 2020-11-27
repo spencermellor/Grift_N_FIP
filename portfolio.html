@@ -3,12 +3,22 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portfolio</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;900&display=swap"
-            rel="stylesheet"
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta
+            name="description"
+            content="Nate Grift's Portfolio.  I'm a Graphic Designer & Web Developer.  Come check out my projects!"
         />
+        <meta
+            name="keywords"
+            content="nategrift, nate, grift, portfolio, graphic design, webdeveloper, devleoper, design, fanci"
+        />
+        <meta name="robots" content="index/follow" />
+        <title>Nate Grift - Portfolio</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;900&display=swap"
+            rel="stylesheet" />
         <link rel="stylesheet" href="css/master.css" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     </head>
     <body>
         <!-- Header -->
@@ -20,81 +30,6 @@
 
             <!-- Nav -->
             <div>
-                <ul class="header-social_navigation">
-                    <li>
-                        <a href=""><img src="images/github-square-brands.svg" alt="github" /></a>
-                    </li>
-                    <li>
-                        <a href=""><img src="images/globe-americas-solid.svg" alt="website" /></a>
-                    </li>
-                    <li>
-                        <a href=""><img src="images/instagram-brands.svg" alt="instagram" /></a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Nav -->
-            <div>
-                <img id="navtogglebutton" src="images/bars-light.svg" alt="bars-light" />
-            </div>
-        </header>
-        <nav class="navigationMenu">
-            <img src="images/logo.svg" alt="logo" />
-            <img id="x-button" src="images/x-button.svg" alt="x-button" />
-            <ul class="header-social_navigation">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="portfolio.html">Portfolio</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <!-- Hero Image & Title -->
-        <main>
-            <section>
-                <!-- Title -->
-                <div>
-                    <h1>Portfolio</h1>
-                    <p>Some of my best work is here</p>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <!-- Hero Image -->
-                <div>
-                    <img src="images/" alt="portfolio hero" />
-                </div>
-            </section>
-            <!-- Portfolio -->
-            <section>
-                <nav>
-                    <ul>
-                        <li>Best Work</li>
-                        <li>3D & Motion Design</li>
-                        <li>Web Development</li>
-                        <li>Graphic Design</li>
-                    </ul>
-                </nav>
-                <!-- Portfolio content -->
-                <div>
-                    <ul id="portfolio-content"></ul>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <!-- Links & Logo -->
-            <div class="footer-nav">
-                <a href="contact.html">Contact</a>
-                <a href="index.html" class="footer-logo">
-                    <img src="images/logo.svg" alt="logo" />
-                    <h4>NATEGRIFT</h4>
-                </a>
-                <a href="portfolio.html">Portfolio</a>
-            </div>
-            <!-- Social Media Links -->
-            <div class="footer-social_container">
                 <ul class="header-social_navigation">
                     <li>
                         <a href=""
@@ -119,30 +54,92 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- Nav -->
+            <div>
+                <img
+                    id="navtogglebutton"
+                    src="images/bars-light.svg"
+                    alt="bars-light"
+                />
+            </div>
+        </header>
+        <nav class="navigationMenu">
+            <img src="images/logo.svg" alt="logo" />
+            <img id="x-button" src="images/x-button.svg" alt="x-button" />
+            <ul class="header-social_navigation">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Hero Image & Title -->
+        <main>
+            <section>
+                <!-- Title -->
+                <div class="portfolio-herosection">
+                    <h1>Portfolio</h1>
+                    <p>Some of my best work is here</p>
+                    <a class="button-primary" href="contact.html">Contact</a>
+                </div>
+            </section>
+            <!-- Portfolio -->
+            <section id="portfolio-section">
+                <nav class="portfolio-selector">
+                        <a v-for="link in listOfCategories" @click.prevent="changeSection(link.name)" :class="{ profileActive: link.active }">{{ link.displayName }}</a>
+                </nav>
+                <!-- Portfolio content -->
+                <div>
+                    <ul class="portfolio-content">
+                        <li v-for="port in portfolioItems">
+                            <!-- Images -->
+                            <div class="portfolio-content__images">
+                                <img :src="`images/portfolio_images/${port.image_1}`" :alt="port.title" />
+                            </div>
+
+                            <!-- Info -->
+                            <div class="portfolio-content__text">
+                                <h3>{{ port.title }}</h3>
+                                <p>{{ port.subtitle }}</p>
+                                <p>{{ port.description }}</p>
+                                <a class="button-primary button-smaller" :href="port.link">{{ port.link_title }}</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <!-- Links & Logo -->
+            <div class="footer-nav">
+                <a href="contact.html">Contact</a>
+                <a href="index.html" class="footer-logo">
+                    <img src="images/logo.svg" alt="logo" />
+                    <h4>NATEGRIFT</h4>
+                </a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+            <!-- Social Media Links -->
+            <div class="footer-social_container">
+                <ul class="header-social_navigation">
+                    <li>
+                        <a href=""><img src="images/github-square-brands.svg" alt="github" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/globe-americas-solid.svg" alt="website" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/instagram-brands.svg" alt="instagram" /></a>
+                    </li>
+                </ul>
+            </div>
         </footer>
-
-        <template id="portfolio-template">
-            <li>
-                <!-- Images -->
-                <div>
-                    <img src="images/" alt="image 1" />
-                    <img src="images/" alt="image 2" />
-                </div>
-
-                <!-- Info -->
-                <div>
-                    <h3>Fanci Chat</h3>
-                    <p>Website - Single Page Application</p>
-                    <p>
-                        Fanci chat is a single page application created with
-                        react, node.js, express, and socket.io. This project was
-                        created as a passion project to grow my interest in web
-                        applications and single page applications.
-                    </p>
-                    <a href="#">FANCI CHAT</a>
-                </div>
-            </li>
-        </template>
         <script src="js/nav.js"></script>
         <script type="module" src="js/portfolio.js"></script>
     </body>

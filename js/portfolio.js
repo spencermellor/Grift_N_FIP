@@ -1,34 +1,51 @@
-import { fetchData, postData } from "./modules/fetchData.js";
+import { fetchData } from "./modules/fetchData.js";
 
 (() => {
 
     // Portfolio
+        const portfolio = new Vue({
+            data: {
+                activeCategory: 'featured',
+                portfolioItems: [],
+                listOfCategories: [{
+                    id: "1",
+                    name: "featured",
+                    displayName: "Best Work",
+                    active: true
+                }, {
+                    id: "2",
+                    name: "website",
+                    displayName: "Web Development",
+                    active: false
+                }, {
+                    id: "3",
+                    name: "3d",
+                    displayName: "3D & Motion Design",
+                    active: false
+                }, {
+                    id: "4",
+                    name: "design",
+                    displayName: "Graphic Design",
+                    active: false
+                },]
+            },
+            mounted: function() {
+                fetchData("./includes/data.php").then(data => this.updatePortfolioList(data)).catch(err => { console.log(err);});
+            },
+            methods: {
+                updatePortfolioList(items) {
+                    this.portfolioItems = items;
+                },
+                changeSection(sectionId) {
+                    const itemIndex = this.listOfCategories.findIndex(item => item.name == sectionId);
+                    const activeIndex = this.listOfCategories.findIndex(item => item.active == true)
+                    this.listOfCategories[itemIndex].active = true;
+                    this.listOfCategories[activeIndex].active = false;
 
-    function handlePortfolioDataSet(projects) {
-        console.log("received")
+                    console.log(sectionId)
+                   // fetchData(`./includes/data.php?catergory=${sectionId}`).then(data => this.updatePortfolioList(data)).catch(err => { console.log(err);});  
+                }
+            }
+        }).$mount('#portfolio-section')
         
-        // let portfolioContent = document.querySelector('#portfolio-content');
-        // let portfolioTemplate = document.querySelector('#portfolio-template').content;
-
-        // for (let project in projects) {
-        //     let projectElem = portfolioTemplate.cloneNode(true);
-        //     console.log(projectElem);
-
-            // currentUserText[1].src = `images/${data[user].avatar}`;
-            // currentUserText[2].textContent = data[user].name;
-            // currentUserText[3].textContent = data[user].role;
-            // currentUserText[4].textContent = data[user].nickname;
-
-            // // add this new user to the view
-            // userSection.appendChild(currentUser);
-        //}
-    }
-
-
-
-    function popErrorBox(message) {
-        alert("Something has gone horribly, horribly wrong");
-    }
-
-    fetchData("./includes/functions.php").then(data => handlePortfolioDataSet()).catch(err => { console.log(err); popErrorBox(err); });
 })();
