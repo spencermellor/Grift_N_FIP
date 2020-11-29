@@ -1,6 +1,7 @@
 .button-primary {
-    color: inherit;
+    color: $color-white;
     text-decoration: none;
+    outline: 0;
     border: 1px solid $color-accent;
     border-radius: 3px;
     padding: 1rem 1.5rem;
@@ -11,6 +12,8 @@
     font-weight: 600;
     padding:1rem 8rem;
     margin: 1rem 0;
+    background: none;
+    font-weight: 200;
 }
 
 .button-smaller {

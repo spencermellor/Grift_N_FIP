@@ -14,8 +14,17 @@
         />
         <meta name="description" content="Nate Grift's Portfolio.  I'm a Graphic Designer & Web Developer.  Come check out my projects!">
         <link rel="stylesheet" href="css/master.css" />
+        <script src="https://www.google.com/recaptcha/api.js?render=6LcFkPEZAAAAADsfQKAOkuCKdPvwBX00ugDp_f3L"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     </head>
     <body>
+        <div id="notification">
+            <div>
+                <h5>{{ title }}</h5>
+                <p>{{ info }}</p>
+            </div>
+            <img src="images/x-button.svg" alt="X" @click="removeNotification()">
+        </div>
         <main>
             <!-- Header -->
             <header>
@@ -56,6 +65,22 @@
                     </li>
                 </ul>
             </nav>
+            <section class="contact-section">
+                <h1>Contact Me</h1>
+                <form method="POST" action="mail/mail.php" id="mail-form">
+                    <label for="name">First & Last Name</label>
+                    <input type="text" name="name" id="name" placeholder="Name...">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email...">
+
+                    <label for="message">Message</label>
+                    <textarea type="text" name="message" id="message" placeholder="Message..."></textarea>
+
+                    <button type="submit" id="submit" class="button-primary button-smaller">Submit</button>
+                </form>
+
+            </section>
 
             <footer>
                 <!-- Links & Logo -->
@@ -80,6 +105,7 @@
                 </div>
             </footer>
         </main>
+        <script src="js/mail.js" type="module"></script>
         <script src="js/nav.js"></script>
     </body>
 </html>

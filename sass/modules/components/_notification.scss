@@ -1,0 +1,43 @@
+#notification {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    padding: 1.5rem 10rem;
+    border-radius: 0.2em;
+    transform: translate(-50%, -100%);
+    transition: all 0.5s;
+    position: fixed;
+    top: 0;
+    left: 50%;
+
+    h5 {
+        font-size: 1.6rem;
+        font-weight: 200;
+        color: $color-white;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $color-white;
+    }
+
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+}
+.notification-error {
+    background-color: $notification-error;
+}
+.notification-success {
+    background-color: $notification-success;
+}
+.notification-active {
+    transform: translate(-50%, 2rem) !important;
+}
