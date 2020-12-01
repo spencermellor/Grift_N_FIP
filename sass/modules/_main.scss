@@ -2,7 +2,7 @@ html {
     background-color: $color-black;
     color: $color-secondary;
     font-family: $main-font;
-    font-size: 62.5%;
+    font-size: 50%;
 }
 
 .hidden {
@@ -19,7 +19,7 @@ html {
 .section-column-1-of-2 {
     width: 100%;
     min-width: 35rem;
-    padding: 10rem;
+    padding: 10rem 3rem;
     box-sizing: border-box;
     text-align: center;
     @include center-flex;
@@ -29,11 +29,12 @@ html {
 .section-image {
     position: relative;
     @include gold-lines-offest;
-    max-width: 530px;
+    max-width: 80%;
 
     img {
         width: 100%;
         position: relative;
+        max-width: 530px;
     }
 }
 
@@ -55,8 +56,7 @@ html {
 .section-list {
     font-size: 2.4rem;
     border-top: 1px solid $color-accent;
-    border-bottom: 1px solid $color-accent;
-    padding: 3rem;
+    padding: 2rem;
     h4 {
         font-weight: 500;
         padding: 1.8rem;
@@ -67,6 +67,7 @@ html {
 }
 
 .section-svg {
+    max-width: 50%;
     img {
         width: 100%;
         max-width: 35rem;
@@ -78,6 +79,18 @@ html {
     flex-wrap: wrap;
 }
 
+@media (min-width: 450px) { 
+    html {
+        font-size: 62.5%;
+    }
+    .section-column-1-of-2 {
+        padding: 10rem;
+    }
+    .section-list {
+        padding: 3rem;
+    }
+}
+
 @media (min-width: 850px) { 
     .section-column-1-of-2 {
         width: 50%;
@@ -86,5 +99,4 @@ html {
     .section-fullheight {
         height: 100vh;
     }
-    
 }

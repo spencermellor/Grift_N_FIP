@@ -6,8 +6,9 @@ include('recaptcha.php');
 
 // // Check reCAPTCHA token if not valid DO NOT PROCEED
 if (!isset($_POST['token']) || !checkToken($_POST['token'])) {
-
-    echo json_encode('Invalid reCAPTCHA response.  Please try again later');
+    $results = ['Invalid reCAPTCHA response.  Please try again later'];
+    $results['message'];
+    echo json_encode($results);
 
 } else {
 
@@ -50,7 +51,7 @@ if (!isset($_POST['token']) || !checkToken($_POST['token'])) {
 
     // Define email variables
     // Subject comes from topic selection drop down
-    $email_subject = sprintf('Portfolio Website - %s', $visitor_topic);
+    $email_subject = sprintf('Portfolio Website - %s', $visitor_name);
 
     // Email message template
     $email_message_template = "
@@ -85,7 +86,7 @@ Message:
     // Send email if successful
     if (empty($invalid_inputs)) {
 
-        $email_result = mail($email_recipient, $email_subject, $email_message, $email_headers_development);
+        $email_result = mail($email_recipient, $email_subject, $email_message, $email_headers_production);
 
 
         // If email sent, then respond with message

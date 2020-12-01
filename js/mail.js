@@ -37,6 +37,11 @@ import { notification } from "./modules/notification.js";
         // Puts message in place and showes it with vue
         notification.info = result.message;
         notification.showNotification();
+
+        // Clears all input forms
+        const form = document.querySelector("#mail-form");
+        const requiredInputs = form.querySelectorAll("[required]")
+        requiredInputs.forEach(input => input.value = '');
     }
 
 
@@ -45,19 +50,39 @@ import { notification } from "./modules/notification.js";
         // block the default submit behaviour
         event.preventDefault();
 
-        // Google reCAPTCHA check
-        grecaptcha.ready(function () {
-            grecaptcha
-                .execute("6LcFkPEZAAAAADsfQKAOkuCKdPvwBX00ugDp_f3L", {
-                    action: "contactus",
-                })
-                .then(function (token) {
-                    // Send request to server
-                    SendMail(document.querySelector("#mail-form"), token)
-                        .then((data) => processMailSuccess(data))
-                        .catch((err) => processMailFailure(err));
-                });
-        });
+        const form = document.querySelector("#mail-form");
+        const requiredInputs = form.querySelectorAll("[required]")
+        let missingMessage = 'Error Please fill out the following fields: '
+        requiredInputs.forEach((input) => {
+            if (!input.value) {missingMessage += input.name + ', '};
+        })  
+
+        // if email has all required items filled out.
+        if (missingMessage == 'Error Please fill out the following fields: ') {
+            // Google reCAPTCHA check
+            grecaptcha.ready(function () {
+                grecaptcha
+                    .execute("6LcFkPEZAAAAADsfQKAOkuCKdPvwBX00ugDp_f3L", {
+                        action: "contactus",
+                    })
+                    .then(function (token) {
+                        // Send request to server
+                        SendMail(document.querySelector("#mail-form"), token)
+                            .then((data) => processMailSuccess(data))
+                            .catch((err) => processMailFailure(err));
+                    });
+            });
+
+        } else {
+            // Removes the last comma and space
+            missingMessage = missingMessage.slice(0, -2); 
+
+            // Displays error message
+            processMailFailure(missingMessage);
+        }
+        
+
+
     }
 
     // Add event listener for submitting mail request
