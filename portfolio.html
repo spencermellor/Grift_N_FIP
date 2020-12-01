@@ -21,6 +21,13 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     </head>
     <body>
+        <div id="notification">
+            <div>
+                <h5>{{ title }}</h5>
+                <p>{{ info }}</p>
+            </div>
+            <img src="images/x-button.svg" alt="X" @click="removeNotification()">
+        </div>
         <!-- Header -->
         <header>
             <!-- Icon -->
@@ -92,8 +99,16 @@
                             <div class="portfolio-content__text">
                                 <h3>{{ port.title }}</h3>
                                 <p>{{ port.subtitle }}</p>
-                                <p>{{ port.description }}</p>
+                                
+                                <!-- IF show more is active else -->
+                                <p v-if="port.showMore">{{ port.long_description }}</p>
+                                <p v-else>{{ port.description }}</p>
+
                                 <a class="button-primary button-smaller" :href="port.link">{{ port.link_title }}</a>
+
+                                <!-- IF show more is active else -->
+                                <a class="button-link" v-if="port.showMore" @click="showLess(port.portfolio_id)">show less</a>
+                                <a class="button-link" v-else @click="showMore(port.portfolio_id)">show more</a>
                             </div>
                         </li>
                     </ul>
