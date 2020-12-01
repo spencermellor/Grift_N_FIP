@@ -29,7 +29,9 @@
             <header>
                 <!-- Icon -->
                 <div>
-                    <img src="images/logo.svg" alt="logo" />
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="logo" />
+                    </a>
                 </div>
 
                 <!-- Nav -->
@@ -52,7 +54,7 @@
             <nav class="navigationMenu">
                 <img src="images/logo.svg" alt="logo" />
                 <img id="x-button" src="images/x-button.svg" alt="x-button" />
-                <ul class="header-social_navigation">
+                <ul>
                     <li>
                         <a href="index.html">Home</a>
                     </li>
@@ -68,13 +70,13 @@
                 <h1>Contact Me</h1>
                 <form method="POST" action="mail/mail.php" id="mail-form">
                     <label for="name">First & Last Name</label>
-                    <input type="text" name="name" id="name" placeholder="Name...">
+                    <input type="text" name="name" id="name" placeholder="Name..." required>
 
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email...">
+                    <input type="email" name="email" id="email" placeholder="Email..." required>
 
                     <label for="message">Message</label>
-                    <textarea type="text" name="message" id="message" placeholder="Message..."></textarea>
+                    <textarea type="text" name="message" id="message" placeholder="Message..." required></textarea>
 
                     <button type="submit" id="submit" class="button-primary button-smaller">Submit</button>
                 </form>
