@@ -21,7 +21,7 @@ class Portfolio {
 
     public function getPiecesByCategory($category) {
 
-        $query = 'SELECT p.*, cat.category';
+        $query = 'SELECT p.portfolio_id, p.image_1, p.title, p.subtitle, p.description, p.link, p.link_title, cat.category';
         $query .= ' FROM tbl_portfolio_items p';
         $query .= ' LEFT JOIN tbl_portfolio_categories link ON link.portfolio_id = p.portfolio_id';
         $query .= ' LEFT JOIN tbl_categories cat ON cat.category_id = link.category_id';
@@ -41,12 +41,8 @@ class Portfolio {
 
     public function getPieceByID($id) {
 
-        $query = 'SELECT port.*, cat.category';
-        $query .= ' FROM '.$this->portfolio_items.' port';
-        $query .= ' LEFT JOIN '.$this->portfolio_category_linking.' link ON link.portfolio_id = port.portfolio_id';
-        $query .= ' LEFT JOIN '.$this->categories.' cat ON cat.category_id = link.category_id';
-        $query .= ' WHERE port.portfolio_id = '.$id;
-        $query .= ' GROUP BY cat.category';
+        $query = 'SELECT * FROM '.$this->portfolio_items;
+        $query .= ' WHERE portfolio_id = '.$id;
 
         return $this->runQuery($query);
 

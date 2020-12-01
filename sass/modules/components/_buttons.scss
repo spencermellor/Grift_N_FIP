@@ -4,18 +4,39 @@
     outline: 0;
     border: 1px solid $color-accent;
     border-radius: 3px;
-    padding: 1rem 1.5rem;
     cursor: pointer;
     display: inline-block;
     font-size: 1.6rem;
     line-height: 1.6rem;
-    font-weight: 600;
     padding:1rem 8rem;
-    margin: 1rem 0;
     background: none;
+    transition: all 0.4s;
     font-weight: 200;
+    opacity: 1;
+
+    &:hover {
+        opacity: 0.6;
+    }
 }
 
 .button-smaller {
     padding:1rem 4rem;
 }
+
+.button-link {
+    color: $color-accent;
+    text-decoration: none;
+    padding: 1rem 3rem;
+
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    font-weight: 400;
+    opacity: 1;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+

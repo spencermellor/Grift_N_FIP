@@ -1,4 +1,5 @@
 import { SendMail } from "./modules/mailer.js";
+import { notification } from "./modules/notification.js";
 
 (() => {
     // mail submit button
@@ -6,28 +7,6 @@ import { SendMail } from "./modules/mailer.js";
 
     // Creates notification using vue.js
     // this object is refered to a lot in the lower parts of the code.
-    const notification = new Vue({
-        data: {
-            title: '',
-            info: '',
-            timer: null
-        },
-        methods: {
-            showNotification: function() {
-                this.$el.classList.add('notification-active');
-
-                this.timer = setTimeout(() => {
-                    this.$el.classList.remove('notification-active');
-                }, 7000)
-            },
-            removeNotification: function() {
-                this.$el.classList.remove('notification-active');
-                this.$el.classList.remove('notification-error');
-                this.$el.classList.remove('notification-success');
-                clearTimeout(this.timer);
-            },
-        }
-    }).$mount('#notification')
 
     // Mail Sent
     function processMailFailure(error) {

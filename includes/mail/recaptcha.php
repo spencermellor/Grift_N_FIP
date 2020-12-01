@@ -4,7 +4,7 @@ function checkToken($token) {
 
     // **** Check google ReCaptcha ****
     // Url and Secret key for website
-    $googleReCaptchaSecretKey = 'Secret key goes here - due to it being on the web it has been removed.';
+    $googleReCaptchaSecretKey = '6LcFkPEZAAAAAJdgxEVHySHbHu1ha15VulPjgQ6N';
     $googleReCaptchaURL = 'https://www.google.com/recaptcha/api/siteverify';
 
     // Set values for google verify request
