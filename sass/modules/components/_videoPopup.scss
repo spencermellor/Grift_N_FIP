@@ -1,0 +1,57 @@
+.videoPopup {
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid $color-accent;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+    padding: 0;
+    overflow: hidden;
+    z-index: 250;
+
+    &-video {
+        width: 100%;
+        display: block;
+        
+    }
+    &-x-button {
+        opacity: 1;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        padding: 2rem;
+        transition: all 0.5s;
+    }
+    &:hover &-x-button {
+        opacity: 1;
+    }
+    &-visable {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+#videoBackdrop {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $color-backdrop;
+    z-index: 200;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media (min-width: 700px) { 
+    .videoPopup {
+        width: 80%;
+        &-x-button {
+            opacity: 0;
+        }
+    }
+}
