@@ -83,17 +83,20 @@ import { notification } from "./modules/notification.js";
                 },
                 showVideo(vidPath) {
 
-                    let vid = document.querySelector('.videoPopup');
+                    let vidElem = document.querySelector('.videoPopup');
+                    let vid = document.querySelector('.videoPopup video');
                     let backdrop = vid.nextElementSibling;
                     vid.src = `images/portfolio_images/${vidPath}`;
-                    vid.classList.add('videoPopup-visable');
+                    vidElem.classList.add('videoPopup-visable');
                     backdrop.classList.add('videoPopup-visable');
                 },
                 hideVideo() {
-                    let vid = document.querySelector('.videoPopup');
+                    let vidElem = document.querySelector('.videoPopup');
+                    let vid = document.querySelector('.videoPopup video');
                     let backdrop = vid.nextElementSibling;
                     vid.src = '';
-                    vid.classList.remove('videoPopup-visable');
+                    vid.pause();
+                    vidElem.classList.remove('videoPopup-visable');
                     backdrop.classList.remove('videoPopup-visable');
                 }
             }
