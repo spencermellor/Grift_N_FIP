@@ -10,10 +10,6 @@ This project was designed for **Interactive Media Design** at **Fanshawe College
 
 Purpose is to create a full live-hosted website to demonstate the ability to host a website.  Data needs to be fetched from a database.
 
-### Data for Portfolio
-The file `PortfolioContent.json` within the `data/` folder is a template of what a portfolio item will look like once retrieved from a database.  
-*DO NOT USE THIS AS PORFOLIO DATA IN FINISHED PRODUCT*
-
 ### API info
 
  The api current endpoints are as follows: 
@@ -33,6 +29,10 @@ List of Available categories:
 - `website` *web development projects I made*
 - `3d` *3D and Motion design work*
 - `design` *graphic design work*
+
+**INFO FOR EDITING**
+For the portfolio content, if you want to have a video popup instead of go to new tab before the `url` add `nategrift#video~`.
+Example for this would be: `nategrift#video~favourite-clip.mp4` which would have a popup video of `favourite-clip.mp4` as the videos source.
 
 ### Authors
 
