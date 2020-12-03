@@ -28,6 +28,14 @@
             </div>
             <img src="images/x-button.svg" alt="X" @click="removeNotification()">
         </div>
+        <!--Video Popup-->
+        <div class="videoPopup">
+            <video class="videoPopup-video" src="images/portfolio_images/eletric-intro.mp4" controls></video>
+            <img src="images/x-button.svg" alt="X" class='videoPopup-x-button' id="hideVideo">
+        </div>
+        <div id="videoBackdrop"></div>
+        <!--End Video Popup-->
+        
         <!-- Header -->
         <header>
             <!-- Icon -->
@@ -106,7 +114,9 @@
                                 <p v-if="port.showMore">{{ port.long_description }}</p>
                                 <p v-else>{{ port.description }}</p>
 
-                                <a class="button-primary button-smaller" :href="port.link">{{ port.link_title }}</a>
+                                <!-- IF item is video -->
+                                <a v-if="port.video" class="button-primary button-smaller" @click="showVideo(port.link)">{{ port.link_title }}</a>
+                                <a v-else class="button-primary button-smaller" target="_blank":href="port.link">{{ port.link_title }}</a>
 
                                 <!-- IF show more is active else -->
                                 <a class="button-link" v-if="port.showMore" @click="showLess(port.portfolio_id)">show less</a>

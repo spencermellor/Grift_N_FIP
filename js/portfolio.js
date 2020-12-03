@@ -19,7 +19,14 @@ import { notification } from "./modules/notification.js";
             methods: {
                 updatePortfolioList(items) {
                     // sets list to whats retreived and add the showmore option to be none
-                    items.forEach((portItem => portItem.showMore = false));
+                    items.forEach((portItem) => {
+                        portItem.showMore = false
+                        portItem.video = false;
+                        if (portItem.link.includes('nategrift#video~')) {
+                            portItem.link = portItem.link.replace('nategrift#video~', '');
+                            portItem.video = true;
+                        }
+                    });
                     this.portfolioItems = items;
                 },
                 updateCategoriesList(items) {
@@ -73,8 +80,30 @@ import { notification } from "./modules/notification.js";
                         notification.info = err;
                         notification.$el.classList.add('notification-error');
                         notification.showNotification();     
+                },
+                showVideo(vidPath) {
+
+                    let vid = document.querySelector('.videoPopup');
+                    let backdrop = vid.nextElementSibling;
+                    vid.src = `images/portfolio_images/${vidPath}`;
+                    vid.classList.add('videoPopup-visable');
+                    backdrop.classList.add('videoPopup-visable');
+                },
+                hideVideo() {
+                    let vid = document.querySelector('.videoPopup');
+                    let backdrop = vid.nextElementSibling;
+                    vid.src = '';
+                    vid.classList.remove('videoPopup-visable');
+                    backdrop.classList.remove('videoPopup-visable');
                 }
             }
         }).$mount('#portfolio-section')
+        
+        // Hide button and backdrop for video due to it not using Vue
+        const closeVidButton = document.querySelector('#hideVideo');
+        const backdrop = document.querySelector('#videoBackdrop');
+
+        closeVidButton.addEventListener('click', portfolio.hideVideo)
+        backdrop.addEventListener('click', portfolio.hideVideo)
         
 })();
